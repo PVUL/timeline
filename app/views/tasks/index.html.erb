@@ -1,0 +1,31 @@
+<h2>this is the index page for tasks</h2>
+
+<p><%= link_to 'Add a new task', new_task_path %></p>
+
+<% if !@tasks.empty? %>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Duration</th>
+      <th>Start</th>
+      <th>Finish</th>
+      <th>Predecessors</th>
+      <th>Resources</th>
+    </tr>
+
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.number %></td>
+        <td><%= task.name %></td>
+        <td><%= task.duration %></td>
+        <td><%= task.start %></td>
+        <td><%= task.finish %></td>
+        <td><%= task.predecessors %></td>
+        <td><%= task.resources %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Delete', task_path(task), method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
