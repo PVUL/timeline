@@ -1,4 +1,7 @@
 <p>
-  Modify me in `app/views/homes/index.html.erb` or change the root directive in
-  `config/routes.rb`
+  Welcome to Timeline.
+
+  <% if !current_user.nil? %>
+    <p><%= link_to 'See timeline', tasks_path %></p>
+  <% end %>
 </p>
