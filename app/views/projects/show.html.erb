@@ -1,6 +1,6 @@
-<h2>this is the index page for tasks</h2>
+<h2>Project Name:  <%= @project.name %></h2>
 
-<p><%= link_to 'Add a new task', new_project_task_path(@project) %></p>
+<p><%= link_to 'Back to projects', projects_path %></p>
 
 <% if !@tasks.empty? %>
   <table>
@@ -23,9 +23,11 @@
         <td><%= task.finish %></td>
         <td><%= task.predecessors %></td>
         <td><%= task.resources %></td>
-        <td><%= link_to 'Edit', edit_project_task_path(task) %></td>
-        <td><%= link_to 'Delete', project_task_path(task), method: :delete %></td>
+        <td><%= link_to 'Edit', edit_project_task_path(@project, task) %></td>
+        <td><%= link_to 'Delete', project_task_path(@project, task), method: :delete %></td>
       </tr>
     <% end %>
   </table>
 <% end %>
+
+<%= render 'tasks/new' %>

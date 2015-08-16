@@ -5,17 +5,11 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Duration</th>
-    <th>Start</th>
-    <th>Finish</th>
   </tr>
   <%= form_for @project do |f| %>
     <tr>
       <td><%= f.text_field :name %></td>
-      <td><%= f.text_field :duration %></td>
-      <td><%= f.text_field :start %></td>
-      <td><%= f.text_field :finish %></td>
-      <td><%= f.submit 'Submit' %></td>
+      <td><%= f.submit 'Submit', class: "button round" %></td>
     </tr>
   <%- end -%>
 </table>

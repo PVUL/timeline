@@ -1,7 +1,3 @@
-<h2>this is the new page for tasks</h2>
-
-<p><%= link_to 'Back to timeline', project_tasks_path %></p>
-
 <table>
   <tr>
     <th>No.</th>
@@ -12,7 +8,7 @@
     <th>Predecessors</th>
     <th>Resources</th>
   </tr>
-  <%= form_for @task do |f| %>
+  <%= form_for [@project, @task] do |f| %>
     <tr>
       <td><%= f.text_field :number %></td>
       <td><%= f.text_field :name %></td>
@@ -21,7 +17,7 @@
       <td><%= f.text_field :finish %></td>
       <td><%= f.text_field :predecessors %></td>
       <td><%= f.text_field :resources %></td>
-      <td><%= f.submit 'Submit' %></td>
+      <td><%= f.submit 'Submit', class: "button round" %></td>
     </tr>
   <%- end -%>
 </table>
