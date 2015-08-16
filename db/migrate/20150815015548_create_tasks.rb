@@ -9,7 +9,7 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :predecessors
       t.string :resources
 
-      t.timestamps null:false
+      t.timestamps null: false
     end
   end
 end
