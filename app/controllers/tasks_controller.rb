@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
       flash[:notice] = 'Successfully Updated'
-      redirect_to tasks_path
+      redirect_to project_tasks_path
     else
       flash[:notice] = @task.errors.full_messages.join('. ')
       render :edit
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   def destroy
     Task.find(params[:id]).destroy
     flash[:notice] = 'Successfully Deleted'
-    redirect_to tasks_path
+    redirect_to project_tasks_path
   end
 
   private
