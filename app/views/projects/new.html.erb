@@ -1,0 +1,15 @@
+<h2>this is the new page for projects</h2>
+
+<p><%= link_to 'Back to projects', projects_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <%= form_for @project do |f| %>
+    <tr>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.submit 'Submit', class: "button round" %></td>
+    </tr>
+  <%- end -%>
+</table>

@@ -1,3 +1,0 @@
-== Timeline
-
-This is an app designed to help better track and manage projects.
