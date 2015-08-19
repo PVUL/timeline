@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :duration
       t.string :start
       t.string :finish
-      t.belongs_to :users
+      t.belongs_to :user
 
       t.timestamps null: false
     end
