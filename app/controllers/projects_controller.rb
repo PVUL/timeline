@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @user = current_user
+    @projects = Project.where(user: @user)
   end
 
   def new
@@ -8,7 +9,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @project = Project.new(project_params)
+    @project.user = @user
+
     if @project.save
       flash[:notice] = 'Sucessfully Added'
       redirect_to projects_path
